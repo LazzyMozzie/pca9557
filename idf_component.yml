@@ -1,0 +1,11 @@
+version: 1.0.0
+name: PCA9557
+description: IO扩展芯片PCA9557的I2C驱动程序
+url: https://github.com/LazzyMozzie/PCA9557
+license: MIT
+files:
+  exclude:
+  - .git
+dependencies:
+  idf:
+    version: ">=5.0.0"
