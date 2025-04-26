@@ -69,13 +69,13 @@ static esp_err_t expander_dev_prob()
 
 static esp_err_t pca9557_write_reg(uint8_t reg_addr, uint8_t data)
 {
-    return i2c_bus_write_bytes(i2c_handle, pca9557_addr, &reg_addr, sizeof(reg_addr), &data, sizeof(data));
+    return i2c_bus_write_bytes(i2c_handle, pca9557_addr << 1, &reg_addr, sizeof(reg_addr), &data, sizeof(data));
 }
 
 static char pca9557_read_reg(uint8_t reg_addr)
 {
     uint8_t data;
-    i2c_bus_read_bytes(i2c_handle, pca9557_addr, &reg_addr, sizeof(reg_addr), &data, sizeof(data));
+    i2c_bus_read_bytes(i2c_handle, pca9557_addr << 1, &reg_addr, sizeof(reg_addr), &data, sizeof(data));
     return data;
 }
 
